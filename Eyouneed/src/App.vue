@@ -1,8 +1,28 @@
+ 
+<script>
+ 
+ export default {
+   name: 'App',
+   components: {
+
+  },
+   data() {
+     return {
+       open: false,
+      }
+  },
+  methods: {
+    open() {
+
+    }
+  },
+}
+  </script>
 <template>
   <div class="all">
     <div class="page">
        <menu>
-         <div class="hamburger" @click="open()">
+         <div class="hamburger" @click="open == true">
               <span class="line1"></span>
               <span class="line2"></span>
               <span class="line3"></span>
@@ -19,7 +39,7 @@
         </div>
        </menu>
     </div>
-    <div class="open" :style="{width: open}">
+    <div class="open" v-if="open == true">
       
     </div>
     <div class="rest">
@@ -31,35 +51,100 @@
           </div>
        </div>
       </div>
-      <div class="line"></div>
-      
+       <div class="line"></div>
+       <br>
+          <div class="courses">
+            <div class="border">
+              <div class="fix">
+                <div class="courses-text">
+                  Courses that we offer &nbsp; 
+                </div>
+                <a href="" class="see-all">See all </a>
+              </div>
+              <br>
+              <div class="scroll">
+                <img src="https://via.placeholder.com/150/0000FF/808080 ?Text=PAKAINFO.com" alt="" height="250px">
+                <img src="https://via.placeholder.com/150/0000FF/808080 ?Text=PAKAINFO.com" alt="" height="250px">
+                <img src="https://via.placeholder.com/150/0000FF/808080 ?Text=PAKAINFO.com" alt="" height="250px">
+                <img src="https://via.placeholder.com/150/0000FF/808080 ?Text=PAKAINFO.com" alt="" height="250px">
+                <img src="https://via.placeholder.com/150/0000FF/808080 ?Text=PAKAINFO.com" alt="" height="250px">
+              </div>
+            </div>
+      </div>  
+      <footer>
+        <div class="down">
+          <div class="icons">
+             
+          </div>
+          <div class="icons">
+             
+          </div>
+          <div class="icons">
+             
+           </div>
+        </div>
+      </footer>     
   </div> 
 </template>
- 
-<script>
- 
- export default {
-   name: 'App',
-   components: {
 
-  },
-   data() {
-     return {
-       open: Number,
-      }
-  },
-  methods: {
-    open() {
-       this.open = 60
-       console.log(this.openvalue);
-    }
-  },
-}
-  </script>
- 
  <style>
+footer {
+  position: fixed;
+  margin: 90% 0px;
+  width: 100vw;
+  height: 40px;
+  background-color: red;
+}
+.down {
+  position: fixed;
+  margin: 0% 0px;
+  width: 100vw;
+  height: 40px;
+  background-color: red;
+}
+ .scroll {
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+ }
+ .fix {
+  display: flex;
+  gap: 10px
+ }
+ .see-all {
+  color: rgb(39, 150, 107);
+ }
+.courses {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.border { 
+  border: 4px solid;  border-image-slice: 1;  border-width: 3px;
+  height: 50vh;
+  border-radius: 4px;
+  border-image-source: linear-gradient(to left, #743ad5, #19806f);
+}
+.courses-text {
+  background: #8442CF;
+  background: linear-gradient(to right, #8442CF 0%, #3C36FF 32%, #C53ACF 83%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 10px;
+}
+
+body::-webkit-scrollbar-x {
+  display: none;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
  .open {
   height: 100%;
+  width: 20%;
   background-color: #111;
  }
  .hamburger {
@@ -115,7 +200,7 @@ background: linear-gradient(90deg, rgb(2, 42, 52) 3%, rgba(18,88,102,1) 73%, rgb
  .getstarted {
    display: flex;
    justify-content: center;
-   width: 50%;
+   width: 60%;
    height: 45vh;
    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
    background-color: rgba(255, 0, 0, 0);
